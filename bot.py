@@ -166,6 +166,10 @@ TOKEN = '7279336549:AAEUcBB_rADIAIQfjDodVcMMQHbQRtrlueA'
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text('Selamat datang di layanan Chatbot kampus Universitas Gunadarma. Apa yang bisa kami bantu?')
 
+# Fungsi untuk bantuan pengguna
+async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text('Untuk saat ini chatbot UG hanya mampu memberikan informasi mengenai alamat kampus, bayaran kampus, jadwal kampus, kalender akademik kampus, dan cuti semester kampus.')
+
 # Fungsi untuk menangani pesan
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     try:
@@ -193,6 +197,7 @@ def main():
         application = Application.builder().token(TOKEN).build()
 
         application.add_handler(CommandHandler("start", start))
+        application.add_handler(CommandHandler("help", help))
         application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
         logger.info("Bot is starting...")
