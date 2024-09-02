@@ -164,7 +164,7 @@ TOKEN = '7279336549:AAEUcBB_rADIAIQfjDodVcMMQHbQRtrlueA'
 
 # Fungsi untuk memulai bot
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text('Selamat datang di layanan Chatbot kampus Universitas Gunadarma. Apa yang bisa kami bantu?')
+    await update.message.reply_text('Selamat datang di layanan Chatbot kampus Universitas Gunadarma. Apa yang bisa kami bantu? /help Untuk melihat informasi apa saja yang dapat diberikan oleh Bot.')
 
 # Fungsi untuk bantuan pengguna
 async def help(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
