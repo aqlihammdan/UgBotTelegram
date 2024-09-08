@@ -22,6 +22,11 @@ nltk.download('punkt')
 
 # Data untuk melatih model
 data = [
+    ("Halo", "sapaan"),
+    ("Hai", "sapaan"),
+    ("Permisi", "sapaan"),
+    ("Halo bantu saya", "sapaan"),
+    ("Hai chatbot", "sapaan"),
     ("Dimana letak kampus gundar?", "alamat"),
     ("Gundar dimana?", "alamat"),
     ("Ug ada dimana", "alamat"),
@@ -33,6 +38,7 @@ data = [
     ("Jurusan di gundar ada apa aja?", "jurusan"),
     ("Jurusannya apa aja", "jurusan"),
     ("Ada apa aja jurusannya?", "jurusan"),
+    ("Bayaran", "bayaran"),
     ("Bayaran gundar berapa?", "bayaran"),
     ("Bayarannya berapa?", "bayaran"),
     ("Uktnya berapa", "bayaran"),
@@ -130,6 +136,9 @@ def predict_category(text, threshold=0.24):
 
 # Jawaban untuk setiap kategori
 responses = {
+    "sapaan": [
+        "Halo, Apakah ada yang bisa UgBot bantu? atau gunakan /help untuk melihat informasi apa saja yang dapat diberikan oleh Bot."
+    ],
     "alamat": [
         "Untuk lokasi Universitas Gunadarma terletak di berbagai wilayah : \n 1. Kampus A (Jl. Kenari nomor 13 Jakarta Pusat, 10430 Phone : 330220, 330226) \n 2. Kampus B (Jl. Salemba Bluntas Jakarta Pusat) \n 3. Kampus C (Jl. Salemba Raya nomor 53 Jakarta Pusat Phone : 3906518, 3908568 Fax : 3100325) \n 4. Kampus D (Jl. Margonda Raya Pondok Cina, Depok Phone : 7863819, 7520981,7863788) \n 5. Kampus E (Jl. Akses Kelapa Dua Kelapa Dua, Cimanggis Phone : 8719525, 8710561, 8727541 ext. 103,106 Fax : 8710561) \n 6. Kampus G (Jl. Akses Kelapa Dua Kelapa Dua, Cimanggis Phone : 8719525, 8710561, 8727541 ext. 103,106 Fax : 8710561) \n 7. Kampus H (Jl. Akses Kelapa Dua Kelapa Dua, Cimanggis Phone : 8719525, 8710561, 8727541 ext. 103,106 Fax : 8710561) \n 8. Kampus J (Jl. KH. Noer Ali, Kalimalang Bekasi, Phone : 88860117) \n 9. Kampus K (Jl. Kelapa Dua Raya No.93, Klp. Dua, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810) \n 10. Kampus L (Jl. Ruko Mutiara Palem Raya Blok C7 No.20, RT.7/RW.14, Cengkareng Tim., Kecamatan Cengkareng, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11730) \n 11. Kampus M (Technopark, Kec. Mande, Kabupaten Cianjur - Jawa Barat) \n 12. Kampus N (Kabupaten Penajam Paser Utara, Kalimantan Timur)"
     ],
@@ -143,7 +152,7 @@ responses = {
         "Untuk jadwal perkuliahan pada kampus Universitas Gunadarma, anda dapat mengakses link yang sudah dicantumkan. Anda dapat mencari jadwal perkuliahan berdasarkan kelas ataupun nama dosen pengajar. Berikut linknya : https://baak.gunadarma.ac.id/jadwal/cariJadKul"
     ],
     "kalender": [
-        "Untuk melihat kalender akademik kampus universitas gunadarma, anda dapat mengakses link berikut : https://baak.gunadarma.ac.id/downloadAkademik/9"
+        "Untuk melihat kalender akademik kampus universitas gunadarma, anda dapat mengakses link berikut : https://baak.gunadarma.ac.id/downloadAkademik/10"
     ],
     "cuti": [
         "Pada dasarnya cuti akademik adalah pembebasan mahasiswa dari kewajiban mengikuti kegiatan akademik selama jangka waktu tertentu. Untuk informasi cuti akademik anda dapat mengakses pada link yang sudah diberikan, berikut linknya : https://baak.gunadarma.ac.id/adminAkademik/2#undefined2"
